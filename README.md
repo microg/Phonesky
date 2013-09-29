@@ -11,10 +11,10 @@ Building
 2. Download and build [JGooglePlay](https://github.com/microg/JGooglePlay)
 3. Download and build [GoogleServicesFrameworkIncludes](https://github.com/microg/GoogleServicesFrameworkIncludes)
 4. Grab or build the intermediate android.content.pm java classes
-5. Take usual Android App build process, adding protobuf-micro, JGoogle, JGooglePlay and GoogleServicesFrameworkIncludes
+5. Take usual Android App build process, adding protobuf-micro, JGoogle, JGooglePlay and GoogleServicesFrameworkIncludes as dependencies
 
 ###Automatic
-Setup microg-build-system and run
+Setup μg build system and run
 
 	./build.sh Phonesky
 
