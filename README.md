@@ -6,14 +6,14 @@ An inofficial Google PlayStore Client. Part of μg Project.
 Building
 --------
 
-#Manual
+###Manual
 1. Download and build [JGoogle](https://github.com/microg/JGoogle)
 2. Download and build [JGooglePlay](https://github.com/microg/JGooglePlay)
 3. Download and build [GoogleServicesFrameworkIncludes](https://github.com/microg/GoogleServicesFrameworkIncludes)
 4. Grab or build the intermediate android.content.pm java classes
 5. Take usual Android App build process, adding protobuf-micro, JGoogle, JGooglePlay and GoogleServicesFrameworkIncludes
 
-#Automatic
+###Automatic
 Setup microg-build-system and run
 
 	./build.sh Phonesky
