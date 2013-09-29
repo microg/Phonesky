@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="DetailsSubtitle" parent="android:TextAppearance.Small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="DetailsTitle" parent="android:TextAppearance.Large">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="DetailsIcon">
+        <item name="android:padding">4dp</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_width">100dp</item>
+    </style>
+    <style name="DetailsDivider">
+        <item name="android:layout_height">2dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">#ccc</item>
+    </style>
+</resources>

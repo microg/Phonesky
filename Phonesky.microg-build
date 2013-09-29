@@ -1,0 +1,3 @@
+build_typeops="aapt-package javac dex pack-apk sign-apk"
+libs_use="protobuf-micro JGoogle JGooglePlay GoogleServicesFrameworkIncludes android-support-v4 android-support-v7-appcompat android.content.pm picasso"
+libs_inc="protobuf-micro JGoogle JGooglePlay GoogleServicesFrameworkIncludes android-support-v4 android-support-v7-appcompat picasso"

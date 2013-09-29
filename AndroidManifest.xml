@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="80230011" android:versionName="4.3.11-1" package="com.android.vending"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="18" />
+    <permission android:name="com.android.vending.TOS_ACKED" android:protectionLevel="dangerous"/>
+    <permission android:name="com.android.vending.CHECK_LICENSE" android:protectionLevel="normal"/>
+    <permission android:name="com.android.vending.BILLING" android:protectionLevel="normal"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+
+    <application android:theme="@style/Theme.AppCompat.Light.DarkActionBar" android:name="org.microg.playstore.StoreApplication">
+        <activity android:name=".AssetBrowserActivity" android:enabled="true" android:exported="true"
+                  android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.SEARCH"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.APP_MARKET"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+            <meta-data android:name="android.app.default_searchable"
+                       android:value="org.microg.playstore.MainActivity"/>
+        </activity>
+        <activity android:name="org.microg.playstore.MainActivity" android:exported="true"
+                  android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <data android:scheme="market" android:host="search" android:path=""/>
+                <data android:scheme="http" android:host="market.android.com" android:path=""/>
+                <data android:scheme="http" android:host="market.android.com" android:pathPrefix="/"/>
+                <data android:scheme="https" android:host="market.android.com" android:path=""/>
+                <data android:scheme="https" android:host="market.android.com" android:pathPrefix="/"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http" android:host="play.google.com" android:pathPrefix="/store"/>
+                <data android:scheme="https" android:host="play.google.com" android:pathPrefix="/store"/>
+                <data android:scheme="http" android:host="play.google.com" android:pathPrefix="/redeem"/>
+                <data android:scheme="https" android:host="play.google.com" android:pathPrefix="/redeem"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+            <meta-data android:name="android.app.default_searchable"
+                       android:value="org.microg.playstore.MainActivity"/>
+        </activity>
+        <receiver android:name="org.microg.playstore.TosAckedReceiver"
+                  android:permission="com.android.vending.TOS_ACKED" android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.TOS_ACKED"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="org.microg.playstore.LicensingService"
+                 android:permission="com.android.vending.CHECK_LICENSE">
+            <intent-filter>
+                <action android:name="com.android.vending.licensing.ILicensingService"/>
+            </intent-filter>
+        </service>
+        <service android:name="org.microg.playstore.MarketBillingService">
+            <intent-filter>
+                <action android:name="com.android.vending.billing.MarketBillingService.BIND"/>
+            </intent-filter>
+        </service>
+        <service android:name="org.microg.playstore.InAppBillingService">
+            <intent-filter>
+                <action android:name="com.android.vending.billing.InAppBillingService.BIND"/>
+            </intent-filter>
+        </service>
+    </application>
+</manifest>
