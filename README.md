@@ -1,22 +1,17 @@
-μg Phonesky
-===========
+microG Phonesky
+===============
 
-An inofficial Google PlayStore Client. Part of μg Project.
+An inofficial Google PlayStore Client. Part of microG Project. Development was paused some time ago, but is supposed to be continued eventually.
 
 Building
 --------
 
-###Manual
+### Manual [*broken*]
 1. Download and build [JGoogle](https://github.com/microg/JGoogle)
 2. Download and build [JGooglePlay](https://github.com/microg/JGooglePlay)
 3. Download and build [GoogleServicesFrameworkIncludes](https://github.com/microg/GoogleServicesFrameworkIncludes)
 4. Grab or build the intermediate android.content.pm java classes
 5. Take usual Android App build process, adding protobuf-micro, JGoogle, JGooglePlay and GoogleServicesFrameworkIncludes as dependencies
-
-###Automatic
-Setup μg build system and run
-
-	./build.sh Phonesky
 
 License
 -------
